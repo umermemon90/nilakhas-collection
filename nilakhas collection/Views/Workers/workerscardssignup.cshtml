@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model IEnumerable<nilakhas_collection.Models.workerssignup>
+@{
+  
+ Layout = "~/Views/Shared/_AdminDashbaord.cshtml";
+    ViewData["Title"] = "Workers list";
+}
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/ASITS/CSS/workercardspage.css" />
+
+
+<div class="workers-page-wrapper">
+    <div class="workers-grid "  >
+    @if (Model != null && Model.Any())
+    {
+        foreach (var worker in Model)
+        {
+            <div class="worker-card">
+                <div class="worker-img-container">
+                    <img src="@Url.Content("~/ASITS/workerimages/" + (worker.workerimagename ?? ""))"
+                         onerror="this.onerror=null; this.src='/ASITS/IMG(PNG)/weblogo.png';"
+                         alt="Worker profile"
+                         class="worker-avatar" />
+                </div>
+
+                <div class="worker-info">
+                    <h3 class="worker-name">@worker.workername</h3>
+
+                    <p class="worker-phone">
+                        <i class="fa-solid fa-phone"></i>
+                        @worker.phonenumber
+                    </p>
+
+                    <p class="worker-role">
+                        <i class="fa-solid fa-briefcase"></i>
+                        @worker.workrole
+                    </p>
+                </div>
+
+                <div class="worker-action">
+                    <a asp-action="workerloginpage" asp-controller="Workers" class="worker-login-btn">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        Login Profile
+                    </a>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="text-center w-100 py-5">
+            <p class="text-muted">No workers registered yet.</p>
+        </div>
+    }
+
+    </div>
+</div>
+
+
+
+

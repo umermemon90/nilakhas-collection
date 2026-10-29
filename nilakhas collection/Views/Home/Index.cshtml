@@ -1,0 +1,149 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="feature-icons-box" style="margin-block-start: 50px;">
+    <div class="feature-item">
+        <div class="feature-icon-circle"><i class="fa-regular fa-clipboard"></i></div>
+        <div class="feature-text">
+            <h3>Easy Management</h3>
+            <p>Manage orders and details with ease.</p>
+        </div>
+    </div>
+    <div class="feature-item">
+        <div class="feature-icon-circle"><i class="fa-regular fa-clock"></i></div>
+        <div class="feature-text">
+            <h3>Quick Process</h3>
+            <p>Fast and simple ordering workflow.</p>
+        </div>
+    </div>
+    <div class="feature-item">
+        <div class="feature-icon-circle"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="feature-text">
+            <h3>Secure & Reliable</h3>
+            <p>Your data is safe and protected.</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <h1>Choose Your Panel</h1>
+    <div class="subtitle-wrapper">
+        <span>Login or Sign Up to Continue</span>
+    </div>
+
+    <div class="cards-grid">
+        <!-- Admin Panel Card -->
+        <div class="card">
+            <div class="icon-container">
+                <!-- Yahan apni image ka path dein -->
+                <img src="~/ASITS/IMG(PNG)/adminicon" alt="Admin Icon">
+            </div>
+            <h3>Admin Panel</h3>
+            <p>Manage store products, customer orders, staff assignments, and records.</p>
+            <div class="card-action">
+                <a asp-action="ADMINLOGIN" asp-controller="ADMINLOGIN" class="panelbtn btn-solid">Open Panel</a>
+            </div>
+        </div>
+
+        <!-- Worker Panel Card -->
+        <div class="card">
+            <div class="icon-container">
+                <!-- Yahan apni image ka path dein -->
+                <img src="~/ASITS/IMG(PNG)/worker" alt="Worker Icon">
+            </div>
+            <h3>Worker Panel</h3>
+            <p>View assigned stitching tasks, order measurements, and updates.</p>
+            <div class="card-action">
+                <a href="worker-login.php" class="panelbtn btn-solid">Open Panel</a>
+            </div>
+        </div>
+
+        <!-- Customer Panel Card -->
+        <div class="card">
+            <div class="icon-container">
+                <!-- Yahan apni image ka path dein -->
+                <img src="/ASITS/IMG(PNG)/coustomer.jpg" alt="Customer Icon">
+            </div>
+            <h3>Customer Panel</h3>
+            <p>Submit custom stitching orders, track progress and communicate.</p>
+            <div class="card-action">
+                <div class="button-group">
+                    <a href="customer-login.php" class="panelbtn btn-solid">Login</a>
+                    <a href="customer-signup.php" class="panelbtn btn-outline">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Why Shop With Us -->
+<section class="shop-section" style="margin-block-start:25px;">
+    <div class="containershop">
+
+        <h2 class="section-title">Why's shop with us?</h2>
+
+        <div class="features-grid">
+
+            <!-- Card 1 -->
+            <div class="feature-card">
+                <div class="image-placeholder">
+                    <img src="~/ASITS/IMG(PNG)/start.jpg" alt="Quality and Saving">
+                </div>
+
+                <h3 class="feature-title">QUALITY AND SAVING</h3>
+
+                <p class="feature-description">
+                    At Nilakha’s Fashion, we ensure top-notch quality at unbeatable prices.
+                    Experience the best in fashion without compromising your budget.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="feature-card">
+                <div class="image-placeholder">
+                    <img src="~/ASITS/IMG(PNG)/shipping.jpg" alt="Fast Shipping">
+                </div>
+
+                <h3 class="feature-title">FAST SHIPPING</h3>
+
+                <p class="feature-description">
+                    Enjoy Nationwide Delivery Across Pakistan for Just Rs 250! Shop Now!
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="feature-card">
+                <div class="image-placeholder">
+                    <img src="~/ASITS/IMG(PNG)/paymentcod.jpg" alt="Payment COD">
+                </div>
+
+                <h3 class="feature-title">PAYMENT COD</h3>
+
+                <p class="feature-description">
+                    Nilakha’s Fashion offers the convenience of Cash on Delivery.
+                    Shop with ease and pay when your order arrives at your doorstep!
+                </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="feature-card">
+                <div class="image-placeholder">
+                    <img src="~/ASITS/IMG(PNG)/have.png" alt="Have Questions">
+                </div>
+
+                <h3 class="feature-title">HAVE QUESTIONS?</h3>
+
+                <p class="feature-description">
+                    Need assistance? Our dedicated 24/7 WhatsApp support team is
+                    always available to help you with any inquiries you may have!
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>

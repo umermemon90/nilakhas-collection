@@ -1,0 +1,188 @@
+/* =========================================
+   THERMAL SLIP STYLING (80mm Width Standard)
+========================================= */
+
+:root {
+    --brand-brown: #3D2511;
+    --receipt-bg: #FFFFFF;
+    --text-color: #2b2b2b;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    background: #e8e8e8;
+    font-family: 'Courier New', Courier, monospace; /* Standard receipt feel */
+    color: var(--brand-brown);
+}
+
+.receipt-container {
+    width: 300px; /* Standard 80mm thermal paper width container */
+    background: var(--receipt-bg);
+    padding: 15px 12px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+/* HEADER SECTION */
+.receipt-header {
+    text-align: center;
+}
+
+.brand-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--brand-brown);
+    margin-bottom: 2px;
+}
+
+.receipt-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.brand-sub {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 4px;
+}
+
+.brand-tagline {
+    font-size: 8px;
+    margin: 4px 0 8px 0;
+    text-transform: uppercase;
+    color: #555;
+}
+
+/* DIVIDER LINE */
+.divider {
+    border-top: 1px dashed var(--brand-brown);
+    margin: 8px 0;
+}
+
+.receipt-title {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.section-heading {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 6px 0 2px 0;
+    letter-spacing: 0.5px;
+}
+
+/* TABLES CONFIGURATION */
+.receipt-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+}
+
+    .receipt-table td {
+        padding: 2px 0;
+        vertical-align: top;
+    }
+
+    .receipt-table .lbl {
+        width: 38%;
+        font-weight: 600;
+    }
+
+    .receipt-table .colon {
+        width: 4%;
+        text-align: center;
+    }
+
+    .receipt-table .val {
+        width: 58%;
+        font-weight: 700;
+        text-align: left;
+    }
+
+/* BILLING SECTION */
+.billing-section {
+    margin-top: 4px;
+}
+
+    .billing-section tr td {
+        font-size: 11px;
+    }
+
+/* STATUS BOX */
+.status-box {
+    text-align: center;
+    background: var(--brand-brown);
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 10px 0;
+    letter-spacing: 1px;
+    border-radius: 2px;
+}
+
+/* BARCODE & QR SECTION */
+.barcode-section {
+    text-align: center;
+    margin: 8px 0;
+}
+
+
+
+.barcode-lines {
+    font-family: monospace;
+    font-size: 16px;
+    letter-spacing: -1px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.barcode-text {
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+/* FOOTER */
+.receipt-footer {
+    text-align: center;
+    font-size: 9px;
+    margin-top: 8px;
+}
+
+.footer-row {
+    margin-bottom: 2px;
+}
+
+.footer-tagline {
+    margin-top: 6px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+/* =========================================
+   DIRECT THERMAL PRINTER MEDIA QUERY
+========================================= */
+@media print {
+    body {
+        background: none;
+        padding: 0;
+    }
+
+    .receipt-container {
+        width: 100% !important;
+        max-width: 80mm !important; /* Fits standard thermal paper rolls */
+        box-shadow: none;
+        padding: 0 4mm;
+        margin: 0;
+    }
+}

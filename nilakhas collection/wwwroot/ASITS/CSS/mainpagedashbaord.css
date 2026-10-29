@@ -1,0 +1,244 @@
+:root {
+    
+    --brand-brown: #3D2511;
+    --brand-brown-light: rgba(61, 37, 17, 0.05);
+    --brand-brown-hover: rgba(61, 37, 17, 0.1);
+    --text-muted: #7A6E65;
+    --card-border: rgba(61, 37, 17, 0.08);
+}
+
+body {
+/*    background-color: var(--bg-cream);*/
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- SIDEBAR RESPONSIVE WRAPPER --- */
+.main-content-wrapper {
+    margin-left: 260px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Top Stats Cards */
+.stat-card {
+    background: #FFFFFF;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 4px rgba(61, 37, 17, 0.01);
+}
+
+.stat-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--brand-brown-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-brown);
+    font-size: 1.25rem;
+}
+
+.stat-title {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-brown);
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.stat-trend {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2E7D32;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Orders Table Card Area */
+.table-container-card {
+    background: #FFFFFF;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+    box-shadow: 0 4px 12px rgba(61, 37, 17, 0.02);
+}
+
+.table-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--brand-brown);
+    margin: 0;
+}
+
+/* Clean Styled Table */
+.custom-table {
+    margin-bottom: 0;
+    white-space: nowrap; /* Mobile par text ko tootne se rokne ke liye taaki table clean rahe */
+}
+
+    .custom-table thead th {
+        background-color: #FAFAFA;
+        color: var(--text-muted);
+        font-weight: 600;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--card-border);
+    }
+
+    .custom-table tbody td {
+        padding: 16px;
+        color: #333333;
+        font-size: 0.9rem;
+        vertical-align: middle;
+        border-bottom: 1px solid rgba(61, 37, 17, 0.05);
+    }
+/* =========================
+   Orders Table
+========================= */
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+    /* Header */
+    .custom-table thead th {
+        text-align: center !important;
+        vertical-align: middle !important;
+        border-right: 1px solid rgba(61, 37, 17, 0.15);
+        border-bottom: 1px solid rgba(61, 37, 17, 0.15);
+    }
+
+    /* Body Cells */
+    .custom-table tbody td {
+        text-align: center !important;
+        vertical-align: middle !important;
+        border-right: 1px solid rgba(61, 37, 17, 0.15);
+        border-bottom: 1px solid rgba(61, 37, 17, 0.12);
+    }
+
+    /* Last column ki right line remove */
+    .custom-table th:last-child,
+    .custom-table td:last-child {
+        border-right: none;
+    }
+
+    /* Action buttons */
+    .custom-table td:last-child {
+        white-space: nowrap;
+    }
+
+        .custom-table td:last-child .btn {
+            min-width: 60px;
+            margin: 2px;
+            text-align: center;
+        }
+
+    /* Status badge center */
+    .custom-table .badge {
+        display: inline-block;
+        min-width: 75px;
+        text-align: center;
+    }
+
+    /* Order number */
+    .custom-table td:first-child {
+        font-weight: 600;
+    }
+
+    /* Hover */
+    .custom-table tbody tr:hover {
+        background-color: rgba(61, 37, 17, 0.03);
+    }
+
+.order-id-txt {
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.customer-name-txt {
+    font-weight: 500;
+    color: var(--brand-brown);
+}
+
+/* Action View Button */
+.btn-view-action {
+    background: transparent;
+    border: 1px solid rgba(61, 37, 17, 0.15);
+    color: var(--brand-brown);
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+    .btn-view-action:hover {
+        background-color: var(--brand-brown);
+        color: #FFFFFF;
+        border-color: var(--brand-brown);
+    }
+
+.btn-brand-add {
+    background-color: var(--brand-brown);
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 0.88rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+    .btn-brand-add:hover {
+        background-color: #29180a;
+        color: #FFFFFF;
+    }
+
+@media (max-width: 991.98px) {
+    .main-content-wrapper {
+        margin-left: 0;
+        padding: 16px;
+    }
+
+    .table-container-card {
+        padding: 16px;
+    }
+
+    .custom-table thead th,
+    .custom-table tbody td {
+        padding: 12px 12px;
+        font-size: 0.85rem;
+    }
+}

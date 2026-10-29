@@ -1,0 +1,557 @@
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
+:root {
+    --brand-brown: #3D2511;
+    --brand-brown-dark: #2c1a0c;
+    --brand-light: rgba(61, 37, 17, 0.05);
+    --brand-hover: rgba(61, 37, 17, 0.10);
+    --text-muted: #7A6E65;
+    --border-color: rgba(61, 37, 17, 0.15);
+    --background: #FAF8F5;
+    --card-background: #F8F5F0;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--brand-brown);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.order-container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 2px 8px rgba(61, 37, 17, 0.03);
+}
+
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+    .header-left h4 {
+        margin: 0;
+        color: var(--brand-brown);
+        font-size: 21px;
+        font-weight: 700;
+    }
+
+
+    .header-left p {
+        margin: 4px 0 0;
+        color: var(--text-muted);
+        font-size: 13px;
+    }
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px;
+    color: var(--brand-brown);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+
+    .btn-back:hover {
+        background: var(--brand-hover);
+        color: var(--brand-brown);
+        border-color: var(--brand-brown);
+    }
+
+
+/* =========================================
+   PDF BUTTON
+========================================= */
+
+.btn-pdf {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 30px;
+    background: var(--brand-brown);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+    .btn-pdf:hover {
+        background: var(--brand-brown-dark);
+        color: white;
+    }
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.custom-card {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(61, 37, 17, 0.04);
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--brand-brown);
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+    border-bottom: 2px solid var(--brand-light);
+}
+
+
+    .section-title i {
+        font-size: 16px;
+    }
+
+
+/* =========================================
+   INFO ROW
+========================================= */
+
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+
+.info-label {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.info-value {
+    color: var(--brand-brown);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: right;
+}
+
+
+    /* =========================================
+   URGENT DELIVERY
+========================================= */
+
+    .info-value.urgent {
+        color: #B7791F;
+    }
+
+
+        .info-value.urgent small {
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    background: var(--brand-light);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--brand-brown);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   BILLING
+========================================= */
+
+.billing-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 13px 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+
+    .billing-row strong {
+        color: var(--brand-brown);
+        font-size: 16px;
+    }
+
+
+    .billing-row .paid {
+        color: #198754;
+    }
+
+
+.due-row {
+    margin-top: 5px;
+    padding-top: 17px;
+    border-top: 1px solid var(--border-color);
+}
+
+
+.due {
+    padding: 7px 12px;
+    background: #FFF5F5;
+    border: 1px solid #FEB2B2;
+    border-radius: 6px;
+    color: #9B2C2C !important;
+    font-size: 14px !important;
+}
+
+
+/* =========================================
+   MEASUREMENTS CARD
+========================================= */
+
+.measurements-card {
+    height: 100%;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+
+.measure-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    background: transparent;
+}
+
+
+    .measure-table th {
+        padding: 12px;
+        background: var(--brand-light);
+        border: 1px solid var(--border-color);
+        color: var(--brand-brown);
+        font-size: 12px;
+        font-weight: 700;
+        text-align: left;
+    }
+
+
+        .measure-table th.text-end {
+            text-align: right;
+        }
+
+
+    .measure-table td {
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        color: var(--text-muted);
+        font-size: 13px;
+        background: transparent;
+    }
+
+
+        .measure-table td:first-child {
+            color: var(--brand-brown);
+            font-weight: 600;
+        }
+
+
+        .measure-table td:last-child {
+            color: #29231F;
+            font-weight: 700;
+            text-align: right;
+        }
+
+
+    .measure-table tbody tr {
+        transition: 0.2s ease;
+    }
+
+
+        .measure-table tbody tr:hover td {
+            background: var(--brand-light);
+            color: var(--brand-brown);
+        }
+
+
+/* =========================================
+   INSTRUCTION
+========================================= */
+
+.instruction-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 13px 14px;
+    background: var(--brand-light);
+    border-left: 4px solid var(--brand-brown);
+    border-radius: 0 8px 8px 0;
+    color: var(--brand-brown);
+    font-size: 13px;
+}
+
+
+    .instruction-box > i {
+        margin-top: 2px;
+        font-size: 14px;
+    }
+
+
+    .instruction-box strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 13px;
+    }
+
+
+    .instruction-box p {
+        margin: 0;
+        color: var(--text-muted);
+        line-height: 1.5;
+    }
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .order-container {
+        padding-top: 15px;
+        padding-bottom: 25px;
+    }
+
+
+    .page-header {
+        padding: 17px;
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+
+    .header-left {
+        align-items: flex-start;
+    }
+
+
+        .header-left h4 {
+            font-size: 18px;
+        }
+
+
+    .btn-pdf {
+        width: 100%;
+    }
+
+
+    .custom-card {
+        padding: 18px;
+    }
+
+
+    .info-row {
+        align-items: flex-start;
+    }
+
+
+    .info-value {
+        max-width: 55%;
+    }
+}
+
+
+/* =========================================
+   A4 PRINT / PDF
+========================================= */
+
+@page {
+    size: A4;
+    margin: 10mm;
+}
+
+@media print {
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    html,
+    body {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+    }
+
+    body {
+        font-size: 11px;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .order-container {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .page-header {
+        margin-bottom: 12px !important;
+        padding: 12px 15px !important;
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        break-inside: avoid;
+    }
+
+    .header-left h4 {
+        font-size: 17px !important;
+    }
+
+    .header-left p {
+        font-size: 10px !important;
+    }
+
+    .row {
+        --bs-gutter-x: 12px !important;
+        --bs-gutter-y: 12px !important;
+    }
+
+    .custom-card {
+        padding: 14px !important;
+        margin-bottom: 12px !important;
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        break-inside: avoid;
+    }
+
+    .section-title {
+        font-size: 13px !important;
+        padding-bottom: 7px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .info-row {
+        padding: 6px 0 !important;
+    }
+
+    .info-label,
+    .info-value {
+        font-size: 10px !important;
+    }
+
+    .billing-row {
+        padding: 7px 0 !important;
+        font-size: 11px !important;
+    }
+
+        .billing-row strong {
+            font-size: 12px !important;
+        }
+
+    .measure-table th,
+    .measure-table td {
+        padding: 7px !important;
+        font-size: 10px !important;
+    }
+
+    .instruction-box {
+        margin-top: 10px !important;
+        padding: 8px 10px !important;
+        font-size: 10px !important;
+    }
+
+        .instruction-box strong {
+            font-size: 10px !important;
+        }
+
+        .instruction-box p {
+            font-size: 10px !important;
+        }
+
+    /* Prevent Bootstrap columns from creating unwanted spacing */
+    .col-lg-7,
+    .col-lg-5 {
+        width: 100% !important;
+    }
+
+    /* Keep both sections compact */
+    .measurements-card {
+        height: auto !important;
+    }
+}

@@ -1,0 +1,292 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+@model mainpageviewclass
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Details - Nilakhas Collection</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/ASITS/CSS/orderdetails.css">
+
+   
+</head>
+
+<body>
+    
+    <div class="container order-container">
+        @foreach (var orders in Model.orderlist)
+        {
+
+        <!-- ================= HEADER ================= -->
+        <div class="page-header">
+          
+                     <div class="header-left">
+               
+
+                <a href="#" class="btn-back no-print">
+                    <i class="fas fa-arrow-left"></i>
+                    Back
+                </a>
+
+                <div>
+                   
+
+
+
+
+                            <h4>Order Number: @orders.ordernumber</h4>
+                            <p>Detailed view and measurements report</p>
+                            </div>
+
+                            </div>
+
+                            <button onclick="window.print()" class="btn-pdf no-print">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF Invoice
+                            </button>
+
+                            </div>
+
+
+
+                            <div class="row g-4">
+
+
+
+                                <div class="col-lg-7">
+
+                                    <!-- ORDER INFO -->
+                                    <div class="custom-card">
+
+                                        <div class="section-title">
+                                            <i class="fas fa-user-circle"></i>
+                                            Order Info
+                                        </div>
+
+                                        <div class="row">
+
+                                            <!-- CUSTOMER -->
+                                            <div class="col-md-6">
+
+                                                <div class="info-row">
+                                                    <span class="info-label">Customer Name</span>
+                                                    <span class="info-value">
+                                                        @orders.customername
+                                                    </span>
+                                                </div>
+
+                                                <div class="info-row">
+                                                    <span class="info-label">Phone Number</span>
+                                                    <span class="info-value">
+                                        @orders.phonenumber
+                                                    </span>
+                                                </div>
+
+                                                <div class="info-row">
+                                                    <span class="info-label">Order Date</span>
+                                                    <span class="info-value">
+                                                        @orders.bookingdate.ToString("MM/dd/yyyy")
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+
+                                            <!-- ORDER STATUS -->
+                                            <div class="col-md-6">
+
+                                                <div class="info-row">
+                                                    <span class="info-label">Delivery Date</span>
+                                                    <span class="info-value urgent">
+                                        @orders.diliverydate.ToString("MM/dd/yyyy")
+                                                        @* <small>(Urgent)</small> *@
+                                                    </span>
+                                                </div>
+
+                                                <div class="info-row">
+                                                    <span class="info-label">Order Status</span>
+                                                    <span class="status-badge">
+                                        @orders.orderstatus
+                                                    </span>
+                                                </div>
+
+                                                <div class="info-row">
+                                                    <span class="info-label">Order Package</span>
+                                                    <span class="status-badge">
+                                        @orders.stitchingpackage
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- BILLING -->
+                                    <div class="custom-card">
+
+                                        <div class="section-title">
+                                            <i class="fas fa-wallet"></i>
+                                            Billing Summary
+                                        </div>
+
+
+                                        <div class="billing-row">
+                                            <span>Total Amount</span>
+                                            <strong>Rs.@orders.total</strong>
+                                        </div>
+
+
+                                        <div class="billing-row">
+                                            <span>Advance Paid</span>
+                                            <strong class="paid">
+                                                Rs.@orders.advanced
+                                            </strong>
+                                        </div>
+
+
+                                        <div class="billing-row due-row">
+                                            <span>Balance Due</span>
+
+                                            <strong class="due">
+                                Rs.@orders.duepayment
+                                            </strong>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- RIGHT COLUMN  -->
+                                <div class="col-lg-5">
+
+                                    <div class="custom-card measurements-card">
+
+                                        <div class="section-title">
+                                            <i class="fas fa-ruler-combined"></i>
+                                            Measurements
+                                        </div>
+
+
+                                        <!-- MEASUREMENTS TABLE -->
+                                        <div class="table-responsive">
+
+                                            <table class="measure-table">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            Measurement Item
+                                                        </th>
+
+                                                        <th class="text-end">
+                                                            Size (Inches)
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+
+
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td>Length</td>
+                                                        <td>@orders.lenght</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Chest</td>
+                                                        <td>@orders.chest</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Waist</td>
+                                                        <td>@orders.waist</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Daman</td>
+                                                        <td>@orders.bottom</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Shoulder</td>
+                                                        <td>@orders.shoulder</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Sleeves</td>
+                                                        <td>@orders.seelves</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Shalwar Length</td>
+                                                        <td>@orders.shalwar</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Shalwar Bottom</td>
+                                                        <td>@orders.shalwar_bottom</td>
+                                                    </tr>
+
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+
+
+                                        <!-- INSTRUCTION -->
+                                        <div class="instruction-box">
+
+                                            <i class="fas fa-info-circle"></i>
+
+                                            <div>
+                                                <strong>Stitching Instruction</strong>
+
+                                                <p>
+                                                    @orders.instruction
+                                                </p>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        }
+
+                            </div>
+                        
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+

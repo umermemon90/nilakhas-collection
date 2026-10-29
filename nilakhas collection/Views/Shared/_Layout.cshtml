@@ -1,0 +1,145 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nilakha's Collection & Men's & Women's FAshion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/ASITS/CSS/index.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    @* Tracking & Sign *@
+     <div class="container-fluid">
+        <div class="top-bar d-flex justify-content-between align-items-center py-2 px-3">
+            <a href="tracking.html" class="btn custom-btn">
+                <i class="bi bi-truck me-1"></i>TRACKING INFO</a>
+
+                 <a href="tracking.html" class="btn custom-btn">
+                <i class="bi bi-truck me-1"></i>SIGN UP</a>
+
+                <a href="signin.html" class="btn custom-btn">
+                    <i class="bi bi-person me-1"></i>LOGIN</a>
+                </div>
+            </div> 
+    <!-- Free Shipping Bar -->
+    <div class="container-fluid mt-1">
+        <div class="free-shipping d-flex align-items-center justify-content-center position-relative py-2">
+            <!-- Free Shipping Text -->
+            <h4 class="free-shipping-kah4 text-center m-0">
+                WELCOME TO NILAKHA'S COLLECTION
+            </h4>
+        </div>
+    </div>
+    <!-- brand logo -->
+    <div class="container text-center" style="margin-block-end: 2rem">
+        <div class="d-flex justify-content-center align-items-center">
+            <img src="~/ASITS/IMG(PNG)/weblogo.png"
+                 alt="Nilakha's Collection Logo"
+                 class="img-fluid brand-logo"
+                 style="max-height: 8rem; height: auto; margin-block-end: 1rem; width: auto;">
+        </div>
+    </div>
+
+                    
+    <!-- Hero Slider -->
+    <div class="carousel slide hero-slider"
+         data-bs-touch="false">
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="~/ASITS/IMG(PNG)/hero.jpg"
+                     class=" slider-img"
+                     alt="Hero Section">
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    
+
+
+
+            @RenderBody()
+       
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer class="main-footer" style="margin-block-start:10px;">
+
+        <div class="footer-container">
+
+            <!-- Column 1 -->
+            <div class="footer-column">
+                <h3>CAN WE HELP YOU?</h3>
+
+                <p>Whatsapp: +92 332 21 97 756</p>
+                <p>Call Us: +92 316 24 62 803</p>
+                <p>Email: help@nilakhasfashion.com</p>
+            </div>
+
+
+            <!-- Column 2 -->
+            <div class="footer-column">
+                <h3>CUSTOMER SERVICE</h3>
+
+                <a class="dropdown-item" href="#">Contact Us</a>
+                <a class="dropdown-item" href="#">About Us</a>
+                <a class="dropdown-item" href="#">Returns & Exchanges</a>
+                <a class="dropdown-item" href="#">Terms & Conditions</a>
+                <a class="dropdown-item" href="#">Privacy Policy</a>
+                <a class="dropdown-item" href="#">Track My Order</a>
+            </div>
+
+
+            <!-- Column 3 -->
+            <div class="footer-column">
+                <h3>ADDITIONAL INFO</h3>
+
+                <p>7 Days Money Back Guarantee</p>
+                <p>Delivery at Door Step in 2 to 3 working days</p>
+                <p>Payment: Cash On Delivery</p>
+            </div>
+
+
+            <!-- Column 4 -->
+            <div class="footer-column social-column">
+                <h3>FOLLOW US</h3>
+
+                <div class="social-icons">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>

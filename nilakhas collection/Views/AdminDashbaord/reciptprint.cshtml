@@ -1,0 +1,201 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model mainpageviewclass
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Receipt - Nilakhas Collection</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Receipt CSS -->
+    <link rel="stylesheet" href="~/ASITS/CSS/receipt.css">
+</head>
+<body>
+
+    <div class="receipt-container">
+        @foreach (var orders in Model.orderlist)
+            {
+
+                <!-- LOGO & HEADER -->
+                <div class="receipt-header">
+                    <div class="brand-logo">
+                        <img src="~/ASITS/IMG(PNG)/weblogo.png" alt="Nilakha's Collection Logo" style="max-height: 40px; width: auto;">
+                    </div>
+                    <h2>NILAKHAS</h2>
+                    <div class="brand-sub">COLLECTION</div>
+                    <p class="brand-tagline">MEN'S TAILORING | SUITS | SHIRTS | CUSTOM FIT</p>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="receipt-title">ORDER RECEIPT</div>
+
+                <!-- ORDER INFO -->
+                <table class="receipt-table">
+                    <tr>
+                        <td class="lbl">Order Number</td>
+                        <td class="colon">:</td>
+                        <td class="val"><strong>@orders.ordernumber</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Order Date</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.bookingdate.ToString("dd-MM-yyyy hh:mm tt")</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Customer Name</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.customername</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Phone</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.phonenumber</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Delivery Date</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.diliverydate.ToString("dd-MM-yyyy")</td>
+                    </tr>
+                </table>
+
+                <div class="divider"></div>
+
+                <!-- ORDER DETAILS -->
+                <div class="receipt-title">ORDER DETAILS</div>
+                <table class="receipt-table">
+
+                    <tr>
+                        <td class="lbl">Order Package</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.stitchingpackage</td>
+                    </tr>
+
+                    <tr>
+                        <td class="lbl">Quantity</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.quantity</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Special Notes</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.instruction</td>
+                    </tr>
+                </table>
+
+                <div class="divider"></div>
+
+                <!-- MEASUREMENTS -->
+                <div class="receipt-title">MEASUREMENTS</div>
+                <table class="receipt-table">
+                    <tr>
+                        <td class="lbl">Length</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.lenght"</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Chest</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.chest"</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Waist</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.waist"</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Daman</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.bottom"</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Shoulder</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.shoulder"</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Sleeve</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.seelves"</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Shalwar Length</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.shalwar"</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Shalwar Paincha</td>
+                        <td class="colon">:</td>
+                        <td class="val">@orders.shalwar_bottom"</td>
+                    </tr>
+                </table>
+
+                <div class="divider"></div>
+
+                <!-- BILLING SUMMARY -->
+                <table class="receipt-table billing-section">
+                    <tr>
+                        <td class="lbl">Total</td>
+                        <td class="colon">:</td>
+                        <td class="val">Rs. @orders.total.ToString("N0")</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Advance</td>
+                        <td class="colon">:</td>
+                        <td class="val">Rs. @orders.advanced.ToString("N0")</td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Due</td>
+                        <td class="colon">:</td>
+                        <td class="val"><strong>Rs. @orders.duepayment.ToString("N0")</strong></td>
+                    </tr>
+                </table>
+
+                <!-- CONFIRMED BADGE -->
+                <div class="status-box">
+                    ORDER CONFIRMED
+                </div>
+
+                <div class="barcode-lines">
+                    ||| | |||| ||| || ||||| || |
+                </div>
+                <div class="barcode-text">@orders.ordernumber</div>
+
+                <div class="divider"></div>
+
+
+                <!-- FOOTER INFO -->
+                <div class="receipt-footer">
+                    <div class="footer-row"><i class="fas fa-phone-alt"></i> 0315-3251488</div>
+                    <div class="footer-row"><i class="fas fa-map-marker-alt"></i> Shop # L77 5-A-3 north karachi near Quid-e-Azam Park</div>
+                    <div class="footer-tagline">~ Your Style, Our Craft ~</div>
+                </div>
+
+            }
+    @* </div> *@
+    
+
+    <!-- Print trigger script for testing -->
+    <script>
+        window.onload = function() {
+            // Print dialog open karega
+            window.print();
+        };
+
+        // Jab print complete ho ya dialog close ho, tab home page par bhej dega
+        window.onafterprint = function() {
+            window.location.href = '@Url.Action("mainpagedashbaord", "AdminDashbaord")';
+        };
+    </script>
+</body>
+</html>

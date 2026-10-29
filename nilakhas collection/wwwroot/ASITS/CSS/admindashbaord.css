@@ -1,0 +1,174 @@
+:root {
+    --bg-cream: #F9F6F0;
+    --brand-brown: #3D2511;
+    --brand-brown-light: rgba(61, 37, 17, 0.05);
+    --brand-brown-hover: rgba(61, 37, 17, 0.1);
+    --text-muted: #7A6E65;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: var(--bg-cream); */
+}
+
+/* --- Sidebar Core Styles --- */
+.sidebar-container {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border-right: 1px solid rgba(61, 37, 17, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 16px;
+    z-index: 1000;
+    /* Scroll fix for extra items */
+    overflow-y: auto;
+}
+
+    /* Custom Scrollbar for Sidebar */
+    .sidebar-container::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .sidebar-container::-webkit-scrollbar-thumb {
+        background: rgba(61, 37, 17, 0.2);
+        border-radius: 10px;
+    }
+
+.brand-section {
+    padding: 1px 1px 2px 8px;
+}
+
+.sidebar-heading {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    padding-left: 12px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 15px;
+}
+
+.nav-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: var(--brand-brown);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.92rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+    .nav-menu-item:hover {
+        background-color: var(--brand-brown);
+        color: var(--bg-cream);
+    }
+
+    .nav-menu-item.active {
+        background-color: var(--brand-brown);
+        color: #FFFFFF;
+    }
+
+.logout-wrapper {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background: white; /* Logout button ke peeche content overlap na ho */
+}
+
+.logout-btn {
+    border: 1px solid rgba(61, 37, 17, 0.15);
+    background: transparent;
+    color: var(--brand-brown);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.92rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+    .logout-btn:hover {
+        background-color: var(--brand-brown);
+        border-color: var(--brand-brown);
+        color: var(--bg-cream);
+    }
+
+/* --- Mobile Top Header Bar Styles --- */
+.mobile-header {
+    display: none;
+    background-color: white;
+    border-bottom: 1px solid rgba(61, 37, 17, 0.08);
+    padding: 12px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.mobile-toggle-btn {
+    background: transparent;
+    border: 1px solid rgba(61, 37, 17, 0.15);
+    color: var(--brand-brown);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Fix for Black Screen (Backdrop removal) --- */
+.offcanvas-backdrop {
+    background-color: transparent !important;
+    display: none !important;
+}
+
+body.offcanvas-open {
+    overflow: auto !important;
+}
+
+/* --- Responsive Media Query --- */
+@media (max-width: 991.98px) {
+    .sidebar-container {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        width: 280px !important;
+    }
+
+        .sidebar-container.show {
+            transform: translateX(0);
+        }
+
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    body {
+        padding-top: 65px;
+    }
+}
